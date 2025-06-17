@@ -1,0 +1,26 @@
+/* Add to your existing global styles */
+@media (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+  
+  body {
+    padding-top: 50px; /* Adjust for smaller navbar */
+  }
+  
+  #home, #about, #services, #portfolio {
+    scroll-margin-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}

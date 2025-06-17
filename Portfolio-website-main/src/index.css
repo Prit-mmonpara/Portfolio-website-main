@@ -1,0 +1,100 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body{
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.5;
+} */
+
+/* Add fixed positioning to navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Add your existing navbar styles here */
+}
+
+/* Compensate for fixed navbar */
+body {
+  padding-top: 60px; /* Match navbar height */
+}
+
+/* Ensure sections aren't hidden under navbar */
+#home, #about, #services, #portfolio {
+  scroll-margin-top: 60px; /* Match navbar height */
+}
+
+/* Add these to your existing CSS */
+
+/* Dark theme variables */
+body.dark-theme {
+  --primary-gradient-start: #283048;
+  --primary-gradient-end: #859398;
+  --text-color: #f0f0f0;
+  --nav-bg: rgba(0, 0, 0, 0.2);
+  --footer-bg: rgba(0, 0, 0, 0.2);
+  --countdown-bg: rgba(0, 0, 0, 0.2);
+  --button-bg: #3a506b;
+  --button-hover: #1c2541;
+  --timer-bg: rgba(255, 255, 255, 0.2);
+}
+
+/* Light theme variables */
+body {
+  --primary-gradient-start: #ff5f6d;
+  --primary-gradient-end: #ffc371;
+  --text-color: #fff;
+  --nav-bg: rgba(255, 255, 255, 0.2);
+  --footer-bg: rgba(255, 255, 255, 0.2);
+  --countdown-bg: rgba(255, 255, 255, 0.2);
+  --button-bg: #ff477e;
+  --button-hover: #ff2f5a;
+  --timer-bg: rgba(0, 0, 0, 0.2);
+}
+
+/* Update existing styles to use variables */
+body {
+  background: linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end));
+  color: var(--text-color);
+}
+
+nav {
+  background: var(--nav-bg);
+}
+
+footer {
+  background: var(--footer-bg);
+}
+
+.countdown-container {
+  background: var(--countdown-bg);
+}
+
+button {
+  background-color: var(--button-bg);
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--button-hover);
+}
+
+#timer-display span {
+  background-color: var(--timer-bg);
+}
+
+.header-container {
+  color: var(--text-color);
+}
+
+/* Add smooth transitions for theme changes */
+body, nav, .countdown-container, footer, button, #timer-display span {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}

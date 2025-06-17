@@ -1,0 +1,231 @@
+.services-container {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.services-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(253, 180, 72, 0.1) 0%, transparent 20%);
+  z-index: 0;
+}
+
+.services-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.services-desc-container {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.services-desc-container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.services-desc-container h1 span {
+  color: #fdb448;
+  display: inline-block;
+  position: relative;
+}
+
+.services-desc-container h1 span::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, #fdb448, #e94c89);
+  border-radius: 2px;
+}
+
+.services-desc-container p {
+  color: #5a6a7e;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.services-desc-container button {
+  background: linear-gradient(90deg, #fdb448, #e94c89);
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  padding: 12px 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(253, 180, 72, 0.3);
+}
+
+.services-desc-container button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(253, 180, 72, 0.4);
+}
+
+.services-item-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.services-item {
+  background: white;
+  border-radius: 20px;
+  padding: 35px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.services-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.services-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #fdb448, #e94c89);
+  z-index: -1;
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(253, 180, 72, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.service-icon i {
+  font-size: 2rem;
+}
+
+.fa-code {
+  color: #e94c89;
+}
+
+.fa-desktop {
+  color: #fdb448;
+}
+
+.fa-tablet-alt {
+  color: #4a6fc5;
+}
+
+.services-desc h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.services-desc p {
+  color: #5a6a7e;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+  .services-desc-container {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  
+  .services-desc-container h1 {
+    font-size: 3.5rem;
+  }
+  
+  .services-item-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .services-desc-container p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .services-item-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .services-desc-container {
+    max-width: 800px;
+    margin: 0 auto 70px;
+  }
+}
+
+/* Add to existing Services.css */
+@media (max-width: 1200px) {
+  .services-list-container {
+    flex-direction: column;
+  }
+  
+  .services-desc-container,
+  .service-item-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-item {
+    margin: 15px 0;
+    width: 100%;
+  }
+  
+  .services-desc-container h1 {
+    font-size: 2.2rem;
+  }
+  
+  .services-desc-container h1 span {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-desc-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .services-desc-container h1 span {
+    font-size: 1.6rem;
+  }
+  
+  .services-item {
+    padding: 15px;
+  }
+  
+  .services-item i {
+    font-size: 1.5rem;
+  }
+}
