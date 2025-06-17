@@ -264,3 +264,80 @@
     font-size: 1.8rem;
   }
 }
+
+@media (max-width: 768px) {
+  .header-container {
+    padding-top: 100px; /* Increase top padding to push content below navbar */
+  }
+}
+
+/* Add these updates to your existing Header.css */
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  /* Remove fixed padding-top and use dynamic JS solution */
+}
+
+.typewriter-container {
+  margin-top: 1rem; /* Add space between name and typewriter */
+  min-height: 4rem; /* Ensure enough space for the typewriter */
+  display: flex;
+  align-items: center;
+}
+
+.typewriter-wrapper {
+  display: inline-block;
+  color: #fdb448;
+  font-weight: bold;
+  min-height: 2.5em;
+  line-height: 1.5; /* Better line spacing */
+}
+
+/* Update responsive section */
+@media (max-width: 992px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 5% 40px; /* Removed top padding - now handled by JS */
+  }
+  
+  .header-content {
+    padding-top: 0;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+  
+  .typewriter-container {
+    min-height: 3.5rem; /* Adjust for mobile */
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .typewriter-wrapper {
+    font-size: 0.9em; /* Slightly smaller on mobile */
+  }
+  
+  .header-content h2 {
+    margin-bottom: 0.5rem; /* Reduce space between lines */
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter-container {
+    min-height: 3rem; /* Smaller space for very small devices */
+  }
+  
+  .typewriter-wrapper {
+    font-size: 0.8em;
+    min-height: 2em;
+  }
+}

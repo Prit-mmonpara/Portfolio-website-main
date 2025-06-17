@@ -276,3 +276,28 @@ input:checked + .slider:before {
     transform: translateX(20px);
   }
 }
+
+/* Add to your existing Navbar.css */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Ensure your navbar has a consistent height */
+  height: 60px; /* Adjust based on your design */
+  /* Add background with blur for better readability */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  nav {
+    height: 50px; /* Slightly smaller on mobile */
+  }
+  
+  /* Ensure mobile menu doesn't cover content */
+  .links {
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
