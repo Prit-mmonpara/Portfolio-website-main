@@ -1,5 +1,42 @@
-/* Header.css */
+/* Header.css - Enhanced Theme Support */
 
+/* Light Theme Variables */
+.light-theme {
+  --bg-gradient-start: #f0f5ff;
+  --bg-gradient-end: #e6f0ff;
+  --text-color: #2d3748;
+  --secondary-text: #4a5568;
+  --accent-gradient-start: #4C9AFF;
+  --accent-gradient-end: #5CA5FF;
+  --circle-border: rgba(76, 154, 255, 0.3);
+  --circle-border-secondary: rgba(76, 154, 255, 0.2);
+  --typewriter-color: #3d8ae0;
+  --button-shadow: rgba(76, 154, 255, 0.3);
+  --icon-color: #4a5568;
+  --icon-hover: #4C9AFF;
+  --button-gradient-start: #4C9AFF;
+  --button-gradient-end: #5CA5FF;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+  --bg-gradient-start: #0f172a;
+  --bg-gradient-end: #1e293b;
+  --text-color: #e2e8f0;
+  --secondary-text: #cbd5e0;
+  --accent-gradient-start: #8a4de6;
+  --accent-gradient-end: #a36ef0;
+  --circle-border: rgba(138, 77, 230, 0.3);
+  --circle-border-secondary: rgba(138, 77, 230, 0.2);
+  --typewriter-color: #9f7aea;
+  --button-shadow: rgba(138, 77, 230, 0.3);
+  --icon-color: #cbd5e0;
+  --icon-hover: #8a4de6;
+  --button-gradient-start: #8a4de6;
+  --button-gradient-end: #a36ef0;
+}
+
+/* Base Styles */
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -9,14 +46,16 @@
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  color: #fff;
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  transition: all 0.4s ease;
 }
 
 .header-content {
   flex: 1;
   max-width: 600px;
   z-index: 2;
-  padding-top: 80px; /* Added padding to prevent overlap */
+  padding-top: 80px;
 }
 
 .profile-img-container {
@@ -36,13 +75,15 @@
   border-radius: 50%;
   z-index: 3;
   position: relative;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .circle-1 {
   position: absolute;
   width: 420px;
   height: 420px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid var(--circle-border);
   border-radius: 50%;
   animation: pulse 3s infinite;
   z-index: 2;
@@ -52,7 +93,7 @@
   position: absolute;
   width: 440px;
   height: 440px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--circle-border-secondary);
   border-radius: 50%;
   animation: pulse 3s infinite 0.5s;
   z-index: 1;
@@ -76,7 +117,7 @@
 .fullname {
   font-size: 3rem;
   margin: 10px 0;
-  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -85,9 +126,9 @@
 
 .typical-wrapper {
   display: inline-block;
-  color: #fdb448;
+  color: var(--typewriter-color);
   font-weight: bold;
-  min-height: 2.5em; /* Ensure consistent height */
+  min-height: 2.5em;
 }
 
 .header-content p {
@@ -95,6 +136,7 @@
   line-height: 1.7;
   margin: 20px 0;
   max-width: 500px;
+  color: var(--secondary-text);
 }
 
 .header-payment-container {
@@ -104,8 +146,8 @@
   margin-top: 30px;
 }
 
-.header-payment-container button {
-  background: linear-gradient(90deg, #fdb448, #e94c89);
+.hire-btn {
+  background: linear-gradient(90deg, var(--button-gradient-start), var(--button-gradient-end));
   border: none;
   border-radius: 30px;
   color: white;
@@ -114,22 +156,27 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(253, 180, 72, 0.3);
+  box-shadow: 0 4px 15px var(--button-shadow);
 }
 
-.header-payment-container button:hover {
+.hire-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(253, 180, 72, 0.4);
+  box-shadow: 0 6px 20px var(--button-shadow);
 }
 
-.header-payment-container i {
+.payment-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.payment-icons i {
   font-size: 2rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--icon-color);
   transition: all 0.3s ease;
 }
 
-.header-payment-container i:hover {
-  color: #fdb448;
+.payment-icons i:hover {
+  color: var(--icon-hover);
   transform: translateY(-3px);
 }
 
@@ -170,7 +217,7 @@
   .header-container {
     flex-direction: column;
     text-align: center;
-    padding: 80px 5% 40px; /* Added top padding */
+    padding: 80px 5% 40px;
   }
   
   .header-content {
@@ -208,7 +255,7 @@
     font-size: 2.5rem;
   }
   
-  .header-content h2 {
+  .header-content h1 {
     font-size: 1.5rem;
   }
   
@@ -227,21 +274,21 @@
     height: 290px;
   }
   
-  .header-payment-container {
-    flex-wrap: wrap;
+  .payment-icons {
+    gap: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .header-container {
-    padding: 60px 5% 30px; /* Added top padding */
+    padding: 60px 5% 30px;
   }
   
   .fullname {
     font-size: 2rem;
   }
   
-  .header-content h2 {
+  .header-content h1 {
     font-size: 1.2rem;
   }
   
@@ -260,80 +307,55 @@
     height: 240px;
   }
   
-  .header-payment-container i {
+  .payment-icons i {
     font-size: 1.8rem;
   }
-}
-
-@media (max-width: 768px) {
-  .header-container {
-    padding-top: 100px; /* Increase top padding to push content below navbar */
+  
+  .hire-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
   }
-}
-
-/* Add these updates to your existing Header.css */
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10%;
-  min-height: 100vh;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  color: #fff;
-  /* Remove fixed padding-top and use dynamic JS solution */
 }
 
 .typewriter-container {
-  margin-top: 1rem; /* Add space between name and typewriter */
-  min-height: 4rem; /* Ensure enough space for the typewriter */
+  margin-top: 1rem;
+  min-height: 4rem;
   display: flex;
   align-items: center;
 }
 
 .typewriter-wrapper {
   display: inline-block;
-  color: #fdb448;
+  color: var(--typewriter-color);
   font-weight: bold;
   min-height: 2.5em;
-  line-height: 1.5; /* Better line spacing */
+  line-height: 1.5;
 }
 
-/* Update responsive section */
 @media (max-width: 992px) {
   .header-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 5% 40px; /* Removed top padding - now handled by JS */
-  }
-  
-  .header-content {
-    padding-top: 0;
-    margin-bottom: 40px;
-    max-width: 100%;
+    padding: 0 5% 40px;
   }
   
   .typewriter-container {
-    min-height: 3.5rem; /* Adjust for mobile */
+    min-height: 3.5rem;
     flex-direction: column;
   }
 }
 
 @media (max-width: 768px) {
   .typewriter-wrapper {
-    font-size: 0.9em; /* Slightly smaller on mobile */
+    font-size: 0.9em;
   }
   
-  .header-content h2 {
-    margin-bottom: 0.5rem; /* Reduce space between lines */
+  .header-content h1 {
+    margin-bottom: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .typewriter-container {
-    min-height: 3rem; /* Smaller space for very small devices */
+    min-height: 3rem;
   }
   
   .typewriter-wrapper {

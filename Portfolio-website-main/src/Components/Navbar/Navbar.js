@@ -43,21 +43,19 @@ const Navbar = ({ darkMode, toggleTheme }) => {
       </div>
       
       <div className="theme-control">
-        <label className="theme-switch">
-          <input 
-            type="checkbox" 
-            checked={darkMode}
-            onChange={toggleTheme}
-          />
-          <span className="slider round"></span>
-        </label>
-        <span className="theme-label">
-          {darkMode ? (
-            <span className="moon-icon">🌙</span>
-          ) : (
-            <span className="sun-icon">☀️</span>
-          )}
-        </span>
+        <div className="toggle-container">
+          <span className={`mode-label ${!darkMode ? 'active' : ''}`}>Light</span>
+          <label className="theme-switch">
+            <input 
+              type="checkbox" 
+              checked={darkMode}
+              onChange={toggleTheme}
+              aria-label="Toggle dark mode"
+            />
+            <span className="slider"></span>
+          </label>
+          <span className={`mode-label ${darkMode ? 'active' : ''}`}>Dark</span>
+        </div>
       </div>
     </nav>
   );
