@@ -1,72 +1,73 @@
-
-nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    padding: 0 20px;
-}
-
-.nav-logo img{
-    width: 90px;
-}
-
-nav ul{
-    display: flex;
-    list-style: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-nav ul li{
-    border-radius: 4px;
-    transition: all 0.3s ease-in-out;
-    padding-bottom: 5px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-nav ul li:hover{
-    background-color: #fcb212;
-    color: #fff;
-    padding: 5px;
-}
-
-/*media query*/
-@media(min-width:768px){
-    nav ul{
-        flex-direction: row;
-    }
-
-    nav ul li{
-        padding: 10px;
-    }
-}
-
-/* Add to existing Navbar.css */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   transition: background-color 0.3s ease;
+  height: 60px;
+  box-sizing: border-box;
 }
 
 nav.dark {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.theme-switch-wrapper {
+.nav-logo img {
+  width: 90px;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.05);
+}
+
+.links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  margin: 0 15px;
+}
+
+.links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+.links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fcb212;
+  transition: width 0.3s ease;
+}
+
+.links li a:hover::after {
+  width: 100%;
+}
+
+.dark .links li a {
+  color: #f0f0f0;
+}
+
+/* Theme Toggle Styles */
+.theme-control {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -77,78 +78,6 @@ nav.dark {
   height: 24px;
   position: relative;
   width: 50px;
-}
-
-.theme-switch input {
-  display: none;
-}
-
-.slider {
-  background-color: #ff477e;
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: .4s;
-}
-
-.slider:before {
-  background-color: #fff;
-  bottom: 4px;
-  content: "";
-  height: 16px;
-  left: 4px;
-  position: absolute;
-  transition: .4s;
-  width: 16px;
-}
-
-input:checked + .slider {
-  background-color: #3a506b;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.theme-switch-wrapper span {
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-/* Improved toggle container */
-.theme-control {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: 20px;
-}
-
-.theme-label {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.theme-label:hover {
-  transform: scale(1.1);
-}
-
-/* Compact toggle switch */
-.theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 45px;
-  height: 24px;
 }
 
 .theme-switch input {
@@ -186,118 +115,72 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(21px);
+  transform: translateX(26px);
 }
 
-/* Responsive positioning */
-@media (max-width: 768px) {
-  .theme-control {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    margin-left: 0;
+.theme-label {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-label:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .links li {
+    margin: 0 10px;
   }
-  
+}
+
+@media (max-width: 768px) {
   nav {
     flex-wrap: wrap;
-    padding-bottom: 50px;
-  }
-  
-  .links {
-    order: 3;
-    width: 100%;
-    margin-top: 15px;
-  }
-}
-
-/* Add to existing Navbar.css */
-@media (max-width: 992px) {
-  .links ul {
-    flex-wrap: wrap;
+    padding: 10px 5%;
+    height: auto;
     justify-content: center;
   }
-  
-  .links li {
-    margin: 5px 10px;
-  }
-  
-  .theme-control {
-    margin-left: 10px;
-  }
-}
 
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    padding: 10px;
-  }
-  
   .nav-logo {
+    width: 100%;
+    text-align: center;
     margin-bottom: 10px;
   }
-  
+
   .links {
-    order: 2;
     width: 100%;
+    margin-bottom: 15px;
   }
-  
+
   .links ul {
-    justify-content: space-around;
+    justify-content: center;
   }
-  
+
   .theme-control {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    margin: 0;
+    top: 20px;
+    right: 20px;
   }
 }
 
 @media (max-width: 480px) {
+  .links li {
+    margin: 0 8px;
+  }
+  
   .links li a {
     font-size: 0.9rem;
   }
   
-  .theme-control {
-    top: 10px;
-  }
-  
   .theme-switch {
-    width: 40px;
-    height: 20px;
+    width: 45px;
+    height: 22px;
   }
   
   .slider:before {
-    width: 16px;
     height: 16px;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(20px);
-  }
-}
-
-/* Add to your existing Navbar.css */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  /* Ensure your navbar has a consistent height */
-  height: 60px; /* Adjust based on your design */
-  /* Add background with blur for better readability */
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-}
-
-@media (max-width: 768px) {
-  nav {
-    height: 50px; /* Slightly smaller on mobile */
-  }
-  
-  /* Ensure mobile menu doesn't cover content */
-  .links {
-    max-height: calc(100vh - 50px);
-    overflow-y: auto;
+    width: 16px;
   }
 }

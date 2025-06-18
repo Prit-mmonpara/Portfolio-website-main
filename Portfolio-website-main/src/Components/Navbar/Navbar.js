@@ -42,17 +42,17 @@ const Navbar = ({ darkMode, toggleTheme }) => {
         </ul>
       </div>
       
-      <div className="theme-switch-wrapper">
-        <label className="theme-switch" htmlFor="checkbox">
+      {/* Optimized Theme Toggle Container */}
+      <div className="theme-control">
+        <label className="theme-switch">
           <input 
             type="checkbox" 
-            id="checkbox" 
             checked={darkMode}
             onChange={toggleTheme}
           />
-          <div className="slider round"></div>
+          <span className="slider round"></span>
         </label>
-        <span>{darkMode ? '🌙 Dark' : '☀️ Light'}</span>
+        <span className="theme-label">{darkMode ? '🌙' : '☀️'}</span>
       </div>
     </nav>
   );
