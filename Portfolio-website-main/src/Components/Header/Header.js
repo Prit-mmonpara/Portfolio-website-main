@@ -27,7 +27,11 @@ const Header = () => {
                 "Full Stack Developer 💙",
                 "Frontend Developer 🚀",
                 "Backend Developer 🏆",
-                "Competitive Coder 🔥💻"
+                "Competitive Coder 🔥💻",
+                "Programming Enthusiast 🤖",
+                "Open Source Contributor 🌍",
+                "Tech Blogger ✍️",
+                
               ]}
               loop={0} // 0 = infinite
               cursor
