@@ -42,7 +42,6 @@ const Navbar = ({ darkMode, toggleTheme }) => {
         </ul>
       </div>
       
-      {/* Optimized Theme Toggle Container */}
       <div className="theme-control">
         <label className="theme-switch">
           <input 
@@ -52,7 +51,13 @@ const Navbar = ({ darkMode, toggleTheme }) => {
           />
           <span className="slider round"></span>
         </label>
-        <span className="theme-label">{darkMode ? '🌙' : '☀️'}</span>
+        <span className="theme-label">
+          {darkMode ? (
+            <span className="moon-icon">🌙</span>
+          ) : (
+            <span className="sun-icon">☀️</span>
+          )}
+        </span>
       </div>
     </nav>
   );
