@@ -31,7 +31,6 @@ const Header = () => {
                 "Programming Enthusiast 🤖",
                 "Open Source Contributor 🌍",
                 "Tech Blogger ✍️",
-                
               ]}
               loop={0} // 0 = infinite
               cursor
