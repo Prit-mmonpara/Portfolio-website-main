@@ -229,3 +229,233 @@
     font-size: 1.5rem;
   }
 }
+
+/* Services.css */
+.services-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(253, 180, 72, 0.1) 0%, transparent 20%);
+  z-index: -1;
+}
+
+.services-item-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.services-item {
+  composes: glass-card;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(253, 180, 72, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.service-icon i {
+  font-size: 2rem;
+}
+
+.fa-code {
+  color: #e94c89;
+}
+
+.fa-desktop {
+  color: #fdb448;
+}
+
+.fa-tablet-alt {
+  color: #4a6fc5;
+}
+
+.services-desc h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.services-desc p {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+  .services-item-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .services-item-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Default (Light Mode) */
+.services-section {
+    background-color: white;
+    color: #333; /* Dark text for light mode */
+}
+
+/* Dark Mode Override */
+.dark-mode .services-section {
+    background-color: #1a1a1a; /* Dark background */
+    color: #f0f0f0; /* Light text */
+}
+
+/* If you have cards or individual service items */
+.service-card {
+    background: #fff; /* Light card bg */
+    color: #222;
+}
+
+.dark-mode .service-card {
+    background: #2d2d2d; /* Dark card bg */
+    color: #e0e0e0;
+}
+
+/* ===== Light Theme (Default) ===== */
+.services-container {
+  padding: 80px 20px;
+  background: var(--bg-color, linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%));
+  color: var(--text-color, #2c3e50);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Radial gradient overlay (adjust opacity for dark mode) */
+.services-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(253, 180, 72, 0.1) 0%, transparent 20%);
+  z-index: 0;
+}
+
+/* Service items (cards) */
+.services-item {
+  background: var(--card-bg, white);
+  color: var(--card-text, #2c3e50);
+  border-radius: 20px;
+  padding: 35px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.services-desc h3 {
+  color: var(--heading-color, #2c3e50);
+}
+
+.services-desc p {
+  color: var(--paragraph-color, #5a6a7e);
+}
+
+/* ===== Dark Theme Overrides ===== */
+.dark-mode .services-container {
+  --bg-color: #121212; /* Match Header.js dark bg */
+  --text-color: #f0f0f0;
+  --card-bg: #1e1e1e; /* Slightly lighter than bg for contrast */
+  --card-text: #e0e0e0;
+  --heading-color: #ffffff;
+  --paragraph-color: #b0b0b0;
+}
+
+.dark-mode .services-container::before {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(30, 30, 30, 0.5) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(253, 180, 72, 0.05) 0%, transparent 20%);
+}
+
+/* Gradient button (works in both themes) */
+.services-desc-container button {
+  background: linear-gradient(90deg, #fdb448, #e94c89);
+  color: white; /* Text remains white in both modes */
+}
+
+/* Icons keep their colors in dark mode */
+.dark-mode .fa-code { color: #e94c89; }
+.dark-mode .fa-desktop { color: #fdb448; }
+.dark-mode .fa-tablet-alt { color: #4a6fc5; }
+
+/* ===== Base Styles ===== */
+.services-container {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.services-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(253, 180, 72, 0.1) 0%, transparent 20%);
+  z-index: 0;
+}
+
+/* ===== Dark Mode Overrides ===== */
+.dark-mode .services-container {
+  background: #121212; /* Match Works.js dark bg */
+}
+
+.dark-mode .services-container::before {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(30, 30, 30, 0.5) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(253, 180, 72, 0.05) 0%, transparent 20%);
+}
+
+/* Text & Cards */
+.dark-mode .services-desc-container h1,
+.dark-mode .services-desc h3 {
+  color: #ffffff;
+}
+
+.dark-mode .services-desc-container p,
+.dark-mode .services-desc p {
+  color: #b0b0b0;
+}
+
+.dark-mode .services-item {
+  background: #1e1e1e; /* Dark card bg */
+  color: #e0e0e0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Keep accent colors (icons, gradients) */
+.dark-mode .fa-code { color: #e94c89; }
+.dark-mode .fa-desktop { color: #fdb448; }
+.dark-mode .fa-tablet-alt { color: #4a6fc5; }
+
+/* Button remains the same in both modes */
+.services-desc-container button {
+  background: linear-gradient(90deg, #fdb448, #e94c89);
+  color: white;
+}
+
