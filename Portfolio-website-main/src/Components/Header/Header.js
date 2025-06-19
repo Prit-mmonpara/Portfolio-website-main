@@ -24,10 +24,10 @@ const Header = ({ darkMode }) => {
             <Typewriter
               words={[
                 "Full Stack Developer 💙",
-                "Frontend Developer 🚀",
                 "Backend Developer 🏆",
-                "Competitive Coder 🔥💻",
-                "Programming Enthusiast 🤖",
+                "Frontend Developer 🚀",
+                "Competitive Coder 🔥💻🏆",
+                "Programming Enthusiast 💻🤖",
                 "Open Source Contributor 🌍",
                 "Tech Blogger ✍️",
               ]}

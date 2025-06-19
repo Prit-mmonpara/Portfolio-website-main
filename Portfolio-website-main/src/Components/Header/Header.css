@@ -1,9 +1,9 @@
-/* Header.css - Enhanced Theme Support */
+/* Header.css - Enhanced with New Gradient */
 
 /* Light Theme Variables */
 .light-theme {
-  --bg-gradient-start: #f0f5ff;
-  --bg-gradient-end: #e6f0ff;
+  --bg-gradient-start: #f5f7fa; /* Updated to match new gradient */
+  --bg-gradient-end: #c3cfe2;   /* Updated to match new gradient */
   --text-color: #2d3748;
   --secondary-text: #4a5568;
   --accent-gradient-start: #4C9AFF;
