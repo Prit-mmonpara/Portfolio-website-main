@@ -93,9 +93,9 @@ const Footer = () => {
           <div className='footer-copyright'>
             <p>© 2025 Prit Monpara. All Rights Reserved</p>
             <div className="footer-legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
+              <a href="www.google.com">Privacy Policy</a>
+              <a href="www.google.com">Terms of Service</a>
+              <a href="www.google.com">Cookie Policy</a>
             </div>
           </div>
         </div>
