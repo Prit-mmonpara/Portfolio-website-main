@@ -11,12 +11,12 @@ const Works = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
   const projects = [
-    { id: 1, title: "E-Commerce Platform", category: "web", image: w1 },
-    { id: 2, title: "Mobile Banking App", category: "mobile", image: w2 },
-    { id: 3, title: "Social Media Dashboard", category: "web", image: w3 },
-    { id: 4, title: "Fitness Tracker App", category: "mobile", image: w4 },
-    { id: 5, title: "Restaurant Booking System", category: "web", image: w5 },
-    { id: 6, title: "Travel Planning App", category: "mobile", image: w6 },
+    { id: 1, title: "E-Commerce Platform", category: "web", image: w1, url: "https://ecommerce-platform.com" },
+    { id: 2, title: "Web Scraping Website", category: "Web", image: w2, url: "https://web-scraping-omega.vercel.app/" },
+    { id: 3, title: "FilmFolio Movie Website", category: "web", image: w3, url: "https://filmfolio-one.vercel.app/" },
+    { id: 4, title: "Linked List Visualization", category: "web", image: w4, url: "https://linked-list-visualization-main-qho5.vercel.app/" },
+    { id: 5, title: "Typing Master", category: "web", image: w5, url: "https://linked-list-visualization-main-upw3.vercel.app/" },
+    { id: 6, title: "Investment Calculator", category: "Web", image: w6, url: "https://investment-calculator-main-lvmo.vercel.app/" },
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -52,6 +52,7 @@ const Works = () => {
       </div>
 
       <div className='works-grid'>
+        {console.log(filteredProjects)}
         {filteredProjects.map(project => (
           <div className='works-item' key={project.id}>
             <img src={project.image} alt={project.title} />
@@ -61,7 +62,7 @@ const Works = () => {
                 <p>{project.category === 'web' ? 'Web Application' : 'Mobile Application'}</p>
                 <div className="project-actions">
                   <button className="view-btn">View Details</button>
-                  <button className="demo-btn">Live Demo</button>
+                  <button className="demo-btn"><a href={project.url}>Live Demo</a></button>
                 </div>
               </div>
             </div>
